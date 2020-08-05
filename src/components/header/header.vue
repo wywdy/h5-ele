@@ -9,7 +9,7 @@ export default {
     props:{
         bgColor:{
             type:String,
-            default:"#000000"
+            default:"#008BFF"
         },
         fontColor:{
             type:String,

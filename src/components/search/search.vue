@@ -17,7 +17,7 @@ export default {
        height: .9rem;
        margin: 20px auto 0 auto;
        border-radius: 15px;
-       font-size: 20px;
+       font-size: .373333rem;
        color:#969696;
        background: #e9e6e6;
        display: flex;
