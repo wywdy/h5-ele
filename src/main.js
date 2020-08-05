@@ -10,6 +10,10 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 Vue.use(Vant)
 
+//移动端适配处理
+import 'postcss-pxtorem'
+import 'lib-flexible'
+
 Vue.config.productionTip = false
 
 new Vue({
