@@ -1,5 +1,5 @@
 <template>
-    <div class="head" :style="{background:bgColor,color:fontColor}">
+    <div class="head" :style="{'background-image':bgColor,color:fontColor}">
        <slot>饿了么</slot>
     </div>
 </template>
@@ -9,7 +9,7 @@ export default {
     props:{
         bgColor:{
             type:String,
-            default:"#008BFF"
+            default:'linear-gradient(90deg,#0af,#0085ff)'
         },
         fontColor:{
             type:String,
