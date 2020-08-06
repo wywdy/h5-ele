@@ -3,7 +3,7 @@ import Vue from 'vue'
 import router from './router'
 import store from './store'
 
-import Personal from './fangzheng/Personal.vue'
+import Personal from './views/userInfo/Personal.vue'
 
 //引入vant ui
 import Vant from 'vant'
