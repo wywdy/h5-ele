@@ -1,7 +1,7 @@
 <template>
     <div class="search">
         <van-icon name="search" />
-        <span>搜索商家、商品名称</span>
+        <input type="text" placeholder="搜索商家、商品名称">
     </div>
 </template>
 
@@ -14,14 +14,19 @@ export default {
 <style lang="less" scoped>
     .search{
        width: 95%;
-       height: .9rem;
-       margin: 20px auto 0 auto;
+       height: 30px;
+       margin: 10px auto 10px auto;
        border-radius: 15px;
-       font-size: 20px;
+       font-size: 12px;
        color:#969696;
        background: #e9e6e6;
        display: flex;
        justify-content: center;
        align-items: center;
+       input{
+           border: none;
+           outline: none;
+           background: none;
+       }
     }
 </style>
