@@ -60,8 +60,8 @@
     -webkit-align-items: center;
     display: flex;
     align-items:flex-start;
-    margin-bottom: 2vw;
-    margin-bottom: .2rem;
+    margin-bottom: 8vw;
+    margin-bottom: .8rem;
     .personalImg{
       overflow:hidden;
       padding: 0 4vw;
@@ -212,7 +212,8 @@ export default {
     },
     methods:{
     gotoInfo() {
-      console.log('用户中心')
+      console.log(this.$router)
+      this.$router.push("/userCenter");
     },
     gotRedEnvelopes(){
       console.log('红包')

@@ -5,7 +5,20 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
   const routes = [
- 
+    {
+      path:'/',
+      redirect:'/my',
+    },
+    {
+      path: '/my',
+      name: 'My',
+      component:()=>import('@/views/userInfo/Personal.vue')
+    },
+    {
+      path: '/userCenter',
+      name: 'userCenter',
+      component:()=>import('@/views/UserCenter/userCenter/userCenter.vue')
+    },
 ]
 
 const router = new VueRouter({

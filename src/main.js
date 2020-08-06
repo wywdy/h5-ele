@@ -1,9 +1,8 @@
 import Vue from 'vue'
-// import App from './App.vue'
+import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import Personal from './views/userInfo/Personal.vue'
 
 //引入vant ui
 import Vant from 'vant'
@@ -19,5 +18,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: h => h(Personal)
+  render: h => h(App)
 }).$mount('#app')
