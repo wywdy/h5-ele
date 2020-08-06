@@ -11,11 +11,12 @@ Vue.use(Vant)
 //移动端适配处理
 import 'postcss-pxtorem'
 import 'lib-flexible'
+import Business from "./views/business/Business";
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(Business)
 }).$mount('#app')
