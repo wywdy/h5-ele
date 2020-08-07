@@ -51,7 +51,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 .All{
   margin: 0;
   padding: .466667rem .2rem;
@@ -212,8 +212,8 @@ export default {
     },
     methods:{
     gotoInfo() {
-      console.log(this.$router)
-      this.$router.push("/userCenter");
+      // console.log(this.$router)
+      this.$router.push("userCenter");
     },
     gotRedEnvelopes(){
       console.log('红包')
@@ -222,7 +222,8 @@ export default {
       console.log('钱包')
     },
     orderReminder(){
-      console.log('点餐提醒')
+      // console.log('点餐提醒')
+      this.$router.push("remindOrder");
     },
     },
     components:{

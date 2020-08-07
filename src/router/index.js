@@ -19,6 +19,16 @@ Vue.use(VueRouter)
       name: 'userCenter',
       component:()=>import('@/views/UserCenter/userCenter/userCenter.vue')
     },
+    {
+      path: '/remindOrder',
+      name: 'remindOrder',
+      component:()=>import('@/views/UserCenter/remindOrder/remindOrder.vue')
+    },    
+    {
+      path: '/address',
+      name: 'address',
+      component:()=>import('@/views/UserCenter/address/address.vue')
+    },
 ]
 
 const router = new VueRouter({
