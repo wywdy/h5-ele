@@ -1,5 +1,5 @@
 const debug = process.env.NODE_ENV !== 'production'
-
+const path = require('path');
 module.exports = {
     /* 部署生产环境和开发环境下的URL：可对当前环境进行区分，baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
     /* baseUrl: process.env.NODE_ENV === 'production' ? './' : '/' */
@@ -14,6 +14,14 @@ module.exports = {
     filenameHashing: false,
     /* 代码保存时进行eslint检测 */
     lintOnSave: true,
+    /* 配置别名 */
+    chainWebpack: (config)=>{
+        config.resolve.alias
+            .set('@$', path.join(__dirname,'src'))
+            .set('components', path.join(__dirname,'src/components'))
+            .set('images', path.join(__dirname,'src/assets/images'))
+            .set('store', path.join(__dirname,'src/store'))
+    },
     /* webpack-dev-server 相关配置 */
     devServer: {
         /* 自动打开浏览器 */

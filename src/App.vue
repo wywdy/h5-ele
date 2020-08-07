@@ -21,5 +21,6 @@ export default {
 
 <style lang="less">
   @import './assets/common/css/normalize.css';
+
   
 </style>
