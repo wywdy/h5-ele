@@ -36,9 +36,33 @@ const routes = [
   {
     path: '/my',
     name: 'My',
-    component:()=>import('@/views/home/home.vue'),
+    component:()=>import('@/views/userInfo/Personal.vue'),
     meta:{
       title:'我的'
+    }
+  },
+  {
+    path: '/userCenter',
+    name: 'userCenter',
+    component:()=>import('@/views/UserCenter/userCenter/userCenter.vue'),
+    meta:{
+      title:'个人中心'
+    }
+  },
+  {
+    path: '/remindOrder',
+    name: 'remindOrder',
+    component:()=>import('@/views/UserCenter/remindOrder/remindOrder.vue'),
+    meta:{
+      title:'订单'
+    }
+  },    
+  {
+    path: '/address',
+    name: 'address',
+    component:()=>import('@/views/UserCenter/address/address.vue'),
+    meta:{
+      title:'地址'
     }
   },
   {
@@ -50,6 +74,7 @@ const routes = [
     }
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
