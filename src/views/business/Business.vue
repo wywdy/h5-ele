@@ -16,10 +16,20 @@
                     <img src="~images/logo.webp" alt="">
                 </div>
                 <!--      店名 + 描述:评价销量距离         -->
-                <div class="shop-name">
+                <div class="shop-name" @click="handleDiaLog">
                     <h2>
                         <span>茉沏(成都奥克斯店)</span>
-                        <i></i>
+                        <i>
+                            <van-dialog
+                                    v-model="show"
+                                    theme="round"
+                                    width="320"
+                                    :show-confirm-button=false
+                                    :overlay-style="{opacity:0.8}"
+                            >
+                                <ShopNotices></ShopNotices>
+                            </van-dialog>
+                        </i>
                     </h2>
                     <div class="desc">
                         <span>评价4.8</span>
@@ -95,6 +105,8 @@
                                 <!--     商品列表组件                           -->
                                 <ProductList></ProductList>
                             </div>
+                            <!--       底部购物车组件          -->
+
                         </van-tab>
                         <van-tab title="评价" name="b" class="context2">内容 2</van-tab>
                         <van-tab title="商家" name="c" class="context3">内容 3</van-tab>
@@ -108,25 +120,35 @@
     import Commodity from './child/Commodity'
     import SideBar from './child/SideBar'
     import ProductList from "./child/ProductList";
+    import { Dialog } from 'vant';
+    import ShopNotices from "./child/ShopNotices";
     export default {
         name: "store",
         components:{
             Commodity,
             SideBar,
-            ProductList
+            ProductList,
+            [Dialog.Component.name]: Dialog.Component,
+            ShopNotices,
         },
         data() {
             return {
                 activeName: 'a',
+                show: false,
+
             };
         },
+        methods:{
+            handleDiaLog(){
+               this.show=!this.show
+            }
+        }
     }
 </script>
 
 <style scoped lang="less">
 .business{
-    width:100%;
-    height: 100%;
+    width:100vw;
     .header{
         width: 100%;
         height: 270px;
@@ -233,6 +255,9 @@
                         height: 6.533333vw;
                         left: 1.6vw;
                         top: 2.133333vw;
+                        .van-dialog{
+                            overflow: visible;
+                        }
                         &::after{
                             content: "";
                             border-style: solid;
@@ -423,6 +448,7 @@
 
                 }
                 .main-container{
+                    width: 100%;
                     display: flex;
                 }
             }
