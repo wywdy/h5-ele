@@ -3,7 +3,7 @@
     <div class="AllList">
         <div class="personalList" 
                 v-for="(item) in List"
-                @click="goto(item.title)"
+                @click="goto(item.url)"
                 :key="item.id">
             <div class="personalListIcon">
               <van-icon :name='item.icon' size="6vw" color="#00AAFF"/>
@@ -67,17 +67,18 @@ export default {
     return {
       // 个人中心数据
       List:[
-        {id:1,title:'我的地址',icon:'location-o'},
-        {id:2,title:'我的收藏',icon:'like-o'},
-        {id:3,title:'推荐有礼',icon:'point-gift-o'},
-        {id:4,title:'我的客服',icon:'service-o'},
-        {id:5,title:'规则中心',icon:'description'}
+        {id:1,title:'我的地址',icon:'location-o',url:'address'},
+        {id:2,title:'我的收藏',icon:'like-o',url:'address'},
+        {id:3,title:'推荐有礼',icon:'point-gift-o',url:'address'},
+        {id:4,title:'我的客服',icon:'service-o',url:'address'},
+        {id:5,title:'规则中心',icon:'description',url:'address'}
       ],
     }
   },
   methods:{
-    goto(name){
-    console.log(name)
+    goto(url){
+      this.$router.push(url);
+    // console.log(url)
     }
   },
 
