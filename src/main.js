@@ -12,7 +12,15 @@ Vue.use(Vant)
 import 'postcss-pxtorem'
 import 'lib-flexible'
 
+//添加事件总线
+Vue.prototype.$bus = new Vue()
+
 Vue.config.productionTip = false
+
+router.beforeEach((to,from,next)=>{
+  document.title = to.meta.title
+  next()
+})
 
 new Vue({
   router,

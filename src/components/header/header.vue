@@ -1,6 +1,8 @@
 <template>
     <div class="head" :style="{'background-image':bgColor,color:fontColor}">
+       <div class="left"><slot name="left"></slot></div>
        <slot>饿了么</slot>
+       <slot name="right"></slot> 
     </div>
 </template>
 
@@ -29,8 +31,17 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        height:1.6rem;
-        font-size: .48rem;
+        height:60px;
+        font-size: 18px;
         font-weight: bold;
+        position: relative;
+        z-index: 99;
+        .left{
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    
     }
 </style>

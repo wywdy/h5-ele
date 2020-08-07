@@ -36,9 +36,32 @@
 <script>
 export default {
     name:'List',
+    mounted(){
+        this.shopInfo = this.shopInfo1
+        this.$bus.$on('changeShopIndex',id=>{
+           // console.log("on",id)
+            switch(id){
+                case 1 : this.shopInfo = this.shopInfo1
+                break
+                case 2:  this.shopInfo = this.shopInfo2
+                break 
+                case 3: this.shopInfo = this.shopInfo3
+                break
+                case 4: this.shopInfo = this.shopInfo4
+            }
+
+        })
+        this.$bus.$on('pullUp',()=>{
+            //console.log('list,pullUp')
+            this.shopInfo.push(...this.shopInfo)
+            //console.log(this.shopInfo.length)
+            this.$bus.$emit('finishPull')
+        })
+    },
     data(){
         return {
-            shopInfo:[
+            shopInfo:this.shopInfo1,
+            shopInfo1:[
                 {
                     imgsrc:require('@/assets/images/demo4.webp'),
                     title:"巷子香大碗肥牛饭",
@@ -60,7 +83,73 @@ export default {
                     score:5
                 },
             ],
-            value:1
+               shopInfo2:[
+                {
+                    imgsrc:require('@/assets/images/t1.webp'),
+                    title:"家乐福",
+                    score:1
+                },
+                   {
+                    imgsrc:require('@/assets/images/t2.webp'),
+                    title:"都市果园",
+                    score:2
+                },
+                   {
+                    imgsrc:require('@/assets/images/demo.webp'),
+                    title:"浣熊先生",
+                    score:3
+                },
+                   {
+                    imgsrc:require('@/assets/images/t1.webp'),
+                    title:"佳乐冰淇淋",
+                    score:4
+                },
+            ],
+               shopInfo3:[
+                {
+                    imgsrc:require('@/assets/images/t3.webp'),
+                    title:"欧尚",
+                    score:4
+                },
+                   {
+                    imgsrc:require('@/assets/images/t1.webp'),
+                    title:"二姐川菜馆",
+                    score:2
+                },
+                   {
+                    imgsrc:require('@/assets/images/demo.webp'),
+                    title:"大米先生",
+                    score:3
+                },
+                   {
+                    imgsrc:require('@/assets/images/t1.webp'),
+                    title:"贵州黄焖鸡",
+                    score:1
+                },
+            ],
+               shopInfo4:[
+                {
+                    imgsrc:require('@/assets/images/t2.webp'),
+                    title:"家乐福",
+                    score:1
+                },
+                   {
+                    imgsrc:require('@/assets/images/demo.webp'),
+                    title:"都市果园",
+                    score:2
+                },
+                   {
+                    imgsrc:require('@/assets/images/t1.webp'),
+                    title:"浣熊先生",
+                    score:3
+                },
+                   {
+                    imgsrc:require('@/assets/images/t1.webp'),
+                    title:"佳乐冰淇淋",
+                    score:4
+                },
+            ],
+  
         }
     }
 }
